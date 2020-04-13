@@ -3,10 +3,7 @@ FROM debian:9.7
 RUN apt-get update && \
 	apt-get -y upgrade && \
 	export DEBIAN_FRONTEND=noninteractive && \
-	apt-get install -y --no-install-recommends htop screen nano curl git-core git-gui git-doc git pkg-config libfreetype6-dev libpng-dev python-matplotlib python-setuptools gconf-service gconf2-common libdbus-glib-1-2 libgconf-2-4 libgtk2.0-0 apt-utils bzip2
-#ENV LANG en_US.utf8
-#RUN apt-get install -y build-essential module-assistant dkms
-#RUN apt-get install -y pkg-config libfreetype6-dev libpng-dev python-biopython python-matplotlib python-setuptools gconf-service gconf2-common libdbus-glib-1-2 libgconf-2-4 libgtk2.0-0
+	apt-get install -y --no-install-recommends htop screen nano curl git-core git-gui git-doc git pkg-config libfreetype6-dev libpng-dev  python-biopython python-matplotlib python-setuptools gconf-service gconf2-common libdbus-glib-1-2 libgconf-2-4 libgtk2.0-0 apt-utils bzip2
 
 # fastqc trimmomatic samtools hisat2 bedtools bcftools seqtk mafft
 RUN apt-get install -y --no-install-recommends fastqc trimmomatic samtools hisat2 bedtools bcftools seqtk mafft
