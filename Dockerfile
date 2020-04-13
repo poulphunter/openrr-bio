@@ -10,8 +10,7 @@ RUN apt-get update && \
 #RUN apt-get install -y --no-install-recommends fastqc trimmomatic samtools hisat2 bedtools bcftools seqtk mafft
 
 # Quast
-RUN cd /root && curl -L -o /root/quast.tar.bz2 https://sourceforge.net/projects/covfiles/files/openrr_v1/quast.tar.bz2/download
-RUN cd /root && curl -L -o /root/quast.tar.bz2.md5 https://sourceforge.net/projects/covfiles/files/openrr_v1/quast.tar.bz2.md5/download && md5sum -c quast.tar.bz2.md5
+RUN cd /root && curl -L -o /root/quast.tar.bz2 https://sourceforge.net/projects/covfiles/files/openrr_v1/quast.tar.bz2/download && cd /root && curl -L -o /root/quast.tar.bz2.md5 https://sourceforge.net/projects/covfiles/files/openrr_v1/quast.tar.bz2.md5/download && md5sum -c quast.tar.bz2.md5
 RUN cd /root && tar -xjvf ./quast.tar.bz2
 RUN cd /root && rm quast.tar.bz2 && rm quast.tar.bz2.md5
 RUN cd /root/quast && git reset --hard HEAD && git pull
